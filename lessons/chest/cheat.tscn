@@ -1,13 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://bblhl7a1l5wo6"]
+[gd_scene load_steps=8 format=3 uid="uid://bblhl7a1l5wo6"]
 
 [ext_resource type="Texture2D" uid="uid://c3hwsm5ugp8qw" path="res://lessons/chest/bottom.png" id="1_2cpai"]
 [ext_resource type="Shader" uid="uid://lio2wmbue2of" path="res://lessons/chest/group_outline.gdshader" id="1_8t71y"]
+[ext_resource type="Script" uid="uid://bwjm7x5bxlgpy" path="res://lessons/chest/cheat.gd" id="1_m7yyf"]
 [ext_resource type="Texture2D" uid="uid://bnem1cahhoxdk" path="res://lessons/chest/top.png" id="2_8t71y"]
 [ext_resource type="Texture2D" uid="uid://bu2jin246nel5" path="res://lessons/chest/lock.png" id="3_m7yyf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m7yyf"]
+resource_local_to_scene = true
 shader = ExtResource("1_8t71y")
-shader_parameter/line_color = Color(0.7692015, 0.690271, 0.20574704, 1)
+shader_parameter/line_color = Color(0.94148475, 0.87772644, 0, 1)
 shader_parameter/line_thickness = 10.0
 shader_parameter/viewport_scale = Vector2(1, 1)
 
@@ -15,6 +17,7 @@ shader_parameter/viewport_scale = Vector2(1, 1)
 size = Vector2(96, 80)
 
 [node name="Cheat" type="Area2D"]
+script = ExtResource("1_m7yyf")
 
 [node name="CanvasGroup" type="CanvasGroup" parent="."]
 material = SubResource("ShaderMaterial_m7yyf")
@@ -35,3 +38,5 @@ texture = ExtResource("3_m7yyf")
 visible = false
 position = Vector2(-3, -12)
 shape = SubResource("RectangleShape2D_bs613")
+
+[node name="Camera2D" type="Camera2D" parent="."]
